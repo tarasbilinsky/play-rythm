@@ -3,7 +3,7 @@ package com.greenlaw110.rythm.play.utils;
 import com.greenlaw110.rythm.logger.Logger;
 import com.greenlaw110.rythm.play.RythmPlugin;
 import com.greenlaw110.rythm.utils.S;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import play.Play;
 import play.exceptions.ActionNotFoundException;
 import play.exceptions.ConfigurationException;

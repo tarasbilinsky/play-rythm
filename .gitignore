@@ -4,4 +4,8 @@
 dist
 *.eml
 *.iml
+target
 targets
+precompiled
+.idea
+tmp

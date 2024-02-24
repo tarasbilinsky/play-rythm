@@ -51,9 +51,6 @@ class TemplatePropertiesEnhancer extends PropertiesEnhancer {
                 return null;
             }
 
-            @Override
-            public void close() {
-            }
         });
     }
 }

@@ -1,5 +1,7 @@
 package play.templates;
 
+import java.util.EmptyStackException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: luog
@@ -9,7 +11,12 @@ package play.templates;
  */
 public class RythmTagContext {
     public static boolean initialized() {
-        return TagContext.currentStack.get() != null;
+        try {
+            TagContext.current();
+            return true;
+        } catch (EmptyStackException e) {
+            return false;
+        }
     }
     public static void enterTag(String name) {
         if (!initialized()) TagContext.init();
