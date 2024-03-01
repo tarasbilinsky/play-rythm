@@ -3,20 +3,26 @@
 @args Exception exception
 <html>
 <head>
-    <title>Application error</title>
+    <title>Unexpected error - HEA Appraisals</title>
     <meta http-equiv="Content-Type" content="text/html; charset=@_response_encoding"/>
+    <link rel="stylesheet" href="https://claims.hea-appraisal.com/public/stylesheets/main.css">
 </head>
 <body>
 
 @if ("DEV".equals(_play.mode.name())) {
 @e500(exception)
 } else {
-<h1>Oops, an error occured</h1>
-@if (exception instanceof PlayException) {
+<header><h1>Unexpected error</h1></header>
+<nav class="subNav"><ul><li class="back"><a href="">Back</a></li></ul></nav>
+
+<h2>
+    HEA support team has already been notified about this error and they will be fixing it as soon as possible. Please try again later. Profuse apologies for the inconvenience.
+</h2>
+
 <p>
-    This exception has been logged with id <strong>@(((PlayException)exception).getId())</strong>.
+    @if (exception instanceof PlayException) {Error reference: <strong>@(((PlayException)exception).getId())</strong>}
 </p>
 }
-}
+
 </body>
 </html>

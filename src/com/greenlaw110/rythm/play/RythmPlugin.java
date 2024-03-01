@@ -500,10 +500,7 @@ public class RythmPlugin extends PlayPlugin {
     @Override
     public void onApplicationStart() {
         if (engine.mode.isProd()) {
-            // pre load template classes if they are not loaded yet
-            VirtualFile vf = Play.getVirtualFile("app/rythm/welcome.html");
-            String key = vf.relativePath().replaceFirst("\\{.*?\\}", "");
-            if (!engine.classes.tmplIdx.containsKey(key)) RythmTemplateLoader.scanRythmFolder();
+            RythmTemplateLoader.scanRythmFolder();
         }
         engine.preCompiling = false;
     }
